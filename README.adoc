@@ -5,6 +5,8 @@ This is a simple Python/Flask app to use in OpenShift training courses.
 The application has several version tags to create several container image
 versions and demonstrate deployment strategies.
 
+The container image registry is here: https://quay.io/repository/gpte-devops-automation/ocp-probe
+
 Tag `v0.2`: just outputs a simple HTML with the version and hostname
 
 Tag `v0.3`: adds the `/version` REST API call which outputs the version.
