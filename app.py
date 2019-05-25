@@ -12,13 +12,5 @@ def hello():
            "<b>Hostname:</b> {hostname}<br/>"
     return html.format(version=os.getenv("VERSION", "0.0"), hostname=socket.gethostname())
 
-@app.route("/version")
-def version():
-    return os.getenv("VERSION", "0.0")
-
-@app.route("/hostname")
-def hostname():
-    return socket.gethostname()
-
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=8080)

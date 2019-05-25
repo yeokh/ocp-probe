@@ -14,7 +14,7 @@ RUN pip install --trusted-host pypi.python.org -r requirements.txt
 EXPOSE 8080
 
 # Define environment variable
-ENV VERSION "0.4"
+ENV VERSION "0.2"
 
 # Run app.py when the container launches
 CMD ["python", "app.py"]
