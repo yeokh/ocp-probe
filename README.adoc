@@ -1,3 +1,20 @@
 == OCP Probe
 
 This is a simple Python/Flask app to use in OpenShift training courses. 
+
+The application has several version tags to create several container image
+versions and demonstrate deployment strategies.
+
+Tag `v0.2`: just outputs a simple HTML with the version and hostname
+
+Tag `v0.3`: adds the `/version` REST API call which outputs the version.
+
+Tag `v0.4`: adds the `/hostname` REST API call.
+Can be used to demonstrate load balancing with Service.
+Create a ReplicaSet with 3 (or more) instances and a Service in front of them.
+Create a simple Pod in the same project and call `curl ClusterIP:8080/hostname` 
+several times.
+You will see that hostnames are different.
+
+Tag `v0.5`: adds the `/healthz` REST API call.
+Can be used to demonstrate readyness checks.
