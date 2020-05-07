@@ -20,6 +20,8 @@ Can be used to demonstrate readyness checks.
 
 YeoKH-Lab-Notes-OpenShift 4 Resources and Tools.txt
 ====================================================
+--------------------------------------------------------------------------------------------
+
 oc login <api-server>
 oc whoami --show-console
 
@@ -75,6 +77,8 @@ YAML manifest components:
   metadata:   => Define resource name, namespace, labels, annotations, ownerReferences.
   spec:       => Object/resource specifications, which may include spec of other objects/resources
 
+--------------------------------------------------------------------------------------------
+
 oc explain pod => Provide information about the resource
 oc explain pod.spec
 oc explain pod.spec.namespace
@@ -114,6 +118,7 @@ Resource limits:
         Container       cpu             -       -       50m             500m            -
         Container       memory          10Mi    6Gi     256Mi           1536Mi          -
         Pod             memory          6Mi     12Gi    -               -               -
+--------------------------------------------------------------------------------------------
 
 oc new-app --list =>  List all local templates and image streams that can be used to create an app.
 oc new-app nginx-example
@@ -126,6 +131,7 @@ oc logs -f pod/nginx-example-1-deploy
 oc logs -f pod/nginx-example-1-n6qk8
 oc rsh pod/nginx-example-1-n6qk8
 oc get all
+--------------------------------------------------------------------------------------------
 
 oc new-app cakephp-mysql-example 
 oc get pods --field-selector status.phase=Running
@@ -136,6 +142,7 @@ oc create -f C:\DevOps\YeoKH-Notes\oc-http-svc.yaml
 oc get service
 oc create -f C:\DevOps\YeoKH-Notes\oc-http-route.yaml
 oc get route
+--------------------------------------------------------------------------------------------
 
 oc create -f ocp-probe-deployment.yaml
 oc rollout status deployment ocp-probe
@@ -146,9 +153,11 @@ oc get all
 oc describe rs ocp-probe-87b4cfcdd
 oc describe replicaset.apps/ocp-probe-87b4cfcdd
 oc describe rs/ocp-probe-87b4cfcdd
+--------------------------------------------------------------------------------------------
 
 oc get deployment
 oc get dc
+--------------------------------------------------------------------------------------------
 
 oc edit deployment ocp-probe => Retrieve and edit a copy of deployment YAML manifest and re-deploy if changed.
 oc rollout status deployment ocp-probe
@@ -164,6 +173,7 @@ oc get services
 oc expose svc green --name=bluegreen
 oc get routes
 curl bluegreen-ykhproj.apps.shared.na.openshift.opentlc.com
+--------------------------------------------------------------------------------------------
 
 ### SWITCH BETWEEN BLUE AND GREEN ###
 
